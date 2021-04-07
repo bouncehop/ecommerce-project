@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 class CategoriesController < ApplicationController
-  def index; end
+  def index
+    @categories = Category.all
+  end
 
-  def show; end
+  def show
+    @category = Category.find(params[:id])
+  end
 end
