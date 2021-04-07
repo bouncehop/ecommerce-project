@@ -1,4 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
+  resources :books, only: %i[index show]
+  resources :categories, only: %i[index show]
   get 'categories/index'
   get 'categories/show'
   get 'books/index'

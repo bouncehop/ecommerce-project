@@ -1,7 +1,7 @@
-class BooksController < ApplicationController
-  def index
-  end
+# frozen_string_literal: true
 
-  def show
-  end
+class BooksController < ApplicationController
+  def index; end
+
+  def show; end
 end
