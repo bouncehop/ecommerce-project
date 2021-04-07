@@ -1,1 +1,9 @@
 <h1><%= @category.name %></h1>
+
+<h2>Books in this category</h2>
+
+<ul>
+  <% @category.books.each do |book| %>
+    <li><%= link_to book.title, book %></li>
+  <% end %>
+</ul>
