@@ -12,8 +12,10 @@ require 'faker'
 Book.delete_all
 Category.delete_all
 
-10.times do
-  category = Category.create(name: Faker::Book.unique.genre)
+scrape = Scraper.new
+genres = scrape.genre_list
+genres.each do |g|
+  category = Category.create(name: g)
 
   10.times do
     book = category.books.create(
