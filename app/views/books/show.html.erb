@@ -1,1 +1,21 @@
 <h1><%= @book.title %></h1>
+
+<p>
+  <strong>Author: </strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong>Description: </strong>
+  <%= @book.description %>
+</p>
+
+<p>
+  <strong>Year: </strong>
+  <%= @book.year %>
+</p>
+
+<p>
+  <strong>Price: </strong>
+  <%= number_to_currency @book.price / 100.0 %>
+</p>

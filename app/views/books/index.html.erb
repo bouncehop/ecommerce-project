@@ -2,6 +2,7 @@
 <div class="container">
 <div class="columns is-multiline is-mobile">
 <% @books.each do |book| %>
+<%= link_to book do %>
 <div class="column is-one-quarter">
 <div class="card">
   <div class="card-image">
@@ -32,6 +33,7 @@
   </div>
 </div>
 </div>
+<% end %>
 <% end %>
 </div>
 </div>
