@@ -18,7 +18,7 @@ genres.each do |g|
   category = Category.create(name: g)
 
   10.times do
-    book = category.books.create(
+    category.books.create(
       title: Faker::Book.unique.title,
       author: Faker::Book.author,
       description: Faker::Lorem.paragraph,
