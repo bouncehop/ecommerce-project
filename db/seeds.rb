@@ -9,6 +9,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+Page.delete_all
 Book.delete_all
 Category.delete_all
 
@@ -28,5 +29,11 @@ genres.each do |g|
   end
 end
 
+Page.create(title: "About Us", content: "stuff here", permalink: "about_us")
+
+Page.create(title: "Contact Us", content: "contact here", permalink: "contact_us")
+
+
 puts "Created #{Category.count} categories"
 puts "Created #{Book.count} books"
+puts "Created #{Page.count} pages"
