@@ -60,3 +60,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 
 gem 'nokogiri'
+
+gem 'activeadmin'
+gem 'devise'

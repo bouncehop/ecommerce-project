@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :pages
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  resources :pages, except: [:show]
+  get '/pages/:permalink' => "pages#permalink", as: "permalink"
   resources :books, only: %i[index show]
   resources :categories, only: %i[index show]
   root to: 'books#index'
