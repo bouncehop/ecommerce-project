@@ -1,9 +1,7 @@
-<h1><%= @category.name %></h1>
+<h2>Books in <%= @category.name %> category</h2>
 
-<h2>Books in this category</h2>
-
-<ul>
-  <% @category.books.each do |book| %>
-    <li><%= link_to book.title, book %></li>
-  <% end %>
-</ul>
+<div class="container">
+<div class="columns is-multiline is-mobile">
+  <%= render partial: 'books/book', collection: @category.books %>
+</div>
+</div>
