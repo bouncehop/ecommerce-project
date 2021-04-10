@@ -37,4 +37,5 @@ Page.create(title: "Contact Us", content: "contact here", permalink: "contact_us
 puts "Created #{Category.count} categories"
 puts "Created #{Book.count} books"
 puts "Created #{Page.count} pages"
+
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
