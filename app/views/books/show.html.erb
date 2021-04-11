@@ -5,8 +5,13 @@
 
 <h2 class="title is-2"><%= @book.title %></h2>
 
-
-
+<% if @book.image.present? %>
+  <div class="card-image">
+    <figure class="image">
+    <%= image_tag @book.image %>
+    </figure>
+  </div>
+<% end %>
 <article class="message is-dark">
 <div class="message-header">
 </div>
