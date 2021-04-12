@@ -19,13 +19,17 @@ genres.each do |g|
   category = Category.create(name: g)
 
   10.times do
-    category.books.create(
+    book = category.books.create(
       title: Faker::Book.unique.title,
       author: Faker::Book.author,
       description: Faker::Lorem.paragraph,
       year: Faker::Number.between(from: 1940, to: 2021),
       price: Faker::Number.between(from: 500, to: 1000)
     )
+
+    downloaded_image = URI.open("https://source.unsplash.com/800x600/?#{book.title}")
+    book.image.attach(io: downloaded_image, filename: "m-#{book.title[0,6]}.jpg")
+    sleep(0.5)
   end
 end
 

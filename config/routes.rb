@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   resources :pages, except: [:show]
   get '/pages/:permalink' => "pages#permalink", as: "permalink"
-  resources :books, only: %i[index show]
+  resources :books, only: %i[index show] do
+    collection do
+      get :search
+    end
+  end
+
   resources :categories, only: %i[index show]
   root to: 'books#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

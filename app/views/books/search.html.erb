@@ -1,0 +1,11 @@
+<p>
+
+  for the search term "<%= params[:search_term] %>".
+</p>
+
+
+<div class="container">
+<div class="columns is-multiline is-mobile">
+  <%= render partial: 'books/book', collection: @books, locals: { show_link: true } %>
+</div>
+</div>

@@ -1,0 +1,17 @@
+<%= form_with(url: search_books_path, local: true, method: "get", class: 'mt-5 mb-5') do %>
+  <div class="field has-addons">
+
+  <%= select_tag :categ, options_from_collection_for_select(Category.all, :id, :name), include_blank: "All" %>
+
+    <div class="control">
+      <%= text_field_tag(:search_term, nil, class: 'input', placeholder: 'Search Books By Name') %>
+    </div>
+
+    <div class="control">
+      <%= submit_tag("Search", class: "button is-info") %>
+    </div>
+
+  </div>
+<% end %>
+
+
