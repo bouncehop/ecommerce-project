@@ -63,3 +63,5 @@ gem 'nokogiri'
 
 gem 'activeadmin'
 gem 'devise'
+
+gem 'kaminari'

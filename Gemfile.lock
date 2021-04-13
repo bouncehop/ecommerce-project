@@ -274,6 +274,7 @@ DEPENDENCIES
   devise
   faker!
   jbuilder (~> 2.7)
+  kaminari
   listen (~> 3.3)
   nokogiri
   puma (~> 5.0)
