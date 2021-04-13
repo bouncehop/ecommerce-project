@@ -42,8 +42,20 @@
   <strong>Price: </strong>
   <%= number_to_currency @book.price / 100.0 %>
 </p>
+<div>
+    <% if cart.include?(@book) %>
+      <%= button_to cart_path(@book), class: "button is-primary", method: :delete do %>
+      Remove from Cart
+      <% end %>
+    <% else %>
+      <%= form_with url: cart_index_path, method: :post do %>
+        <%= hidden_field_tag(:id, @book.id)%>
+        <%= button_tag 'Add to Cart', class: "button is-primary"%>
+      <% end %>
+    <% end %>
+</div>
 
-  </div>
+</div>
 </div>
 
 </div>

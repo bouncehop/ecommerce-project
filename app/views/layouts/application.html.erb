@@ -35,10 +35,7 @@
         <%= render partial: 'shared/search_form' %>
       </div>
 
-
     </div>
-
-
 
     <div class="navbar-end">
 
@@ -46,6 +43,11 @@
   </div>
 </nav>
   <body>
+  <div>
+    <% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+    <% end %>
+  </div>
   <%= yield %>
   <%= render partial: 'common/footer' %>
   </body>
