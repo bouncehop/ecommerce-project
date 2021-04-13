@@ -13,10 +13,39 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="<%= root_path %>">
 
+        <%= image_tag "bookshop.png", alt: "BOOKSHOP" %>
+
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="<%= books_path %>">
+        Browse Books
+      </a>
+      <a class="navbar-item" href="<%= categories_path %>">
+        Browse Categories
+      </a>
+
+      <div class="navbar-item">
+        <%= render partial: 'shared/search_form' %>
+      </div>
+
+
+    </div>
+
+
+
+    <div class="navbar-end">
+
+    </div>
+  </div>
+</nav>
   <body>
-  <h1 class="title is-1"><%= link_to 'Online Bookstore', root_path %></h1>
-  <%= render partial: 'shared/search_form' %>
   <%= yield %>
   <%= render partial: 'common/footer' %>
   </body>

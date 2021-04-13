@@ -16,8 +16,12 @@
 <div class="message-header">
 </div>
 <div class="message-body">
-</div>
-</article>
+
+
+<p>
+  <strong>Genre: </strong>
+  <%= link_to @book.category.name, @book.category %>
+</p>
 
 <p>
   <strong>Author: </strong>
@@ -39,10 +43,8 @@
   <%= number_to_currency @book.price / 100.0 %>
 </p>
 
-<p>
-  <strong>Genre: </strong>
-  <%= link_to @book.category.name, @book.category %>
-</p>
-
   </div>
 </div>
+
+</div>
+</article>
