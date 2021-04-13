@@ -4,7 +4,7 @@
   <%= select_tag :categ, options_from_collection_for_select(Category.all, :id, :name), include_blank: "All" %>
 
     <div class="control">
-      <%= text_field_tag(:search_term, nil, class: 'input', placeholder: 'Search Books By Name') %>
+      <%= text_field_tag(:search_term, nil, class: 'input', placeholder: 'Book Name') %>
     </div>
 
     <div class="control">

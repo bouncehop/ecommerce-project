@@ -31,14 +31,32 @@
         Browse Categories
       </a>
 
-      <div class="navbar-item">
-        <%= render partial: 'shared/search_form' %>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Cart
+        </a>
+        <% if cart.present? %>
+          <div class="navbar-dropdown">
+            <% cart.each do |book| %>
+              <div class="navbar-item">
+                <p><strong><%= book.title %></strong> <%= link_to 'Remove', cart_path(book), method: :delete %></p>
+              </div>
+            <% end %>
+
+        </div>
+        <% end %>
+
+
+
       </div>
+
 
     </div>
 
     <div class="navbar-end">
-
+      <div class="navbar-item">
+        <%= render partial: 'common/search' %>
+      </div>
     </div>
   </div>
 </nav>
