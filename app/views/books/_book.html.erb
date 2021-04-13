@@ -19,10 +19,16 @@
     </div>
 
     <div class="content">
-      <%= book.description %>
+      <p>
+      <strong>Price: </strong>
+      <%= number_to_currency book.price / 100.0 %>
+      </p>
 
-      <br>
-
+    </div>
+    <div>
+    <%= form_with url: cart_index_path, method: :post do %>
+    <%= button_tag 'Add to Cart', class: "button is-primary"%>
+    <% end %>
     </div>
   </div>
 </div>
