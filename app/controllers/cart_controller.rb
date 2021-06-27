@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CartController < ApplicationController
   def create
     logger.debug("Added #{params[:id]} to cart")
@@ -16,6 +18,4 @@ class CartController < ApplicationController
     flash[:notice] = "🛒 Removed \"#{book.title}\" from Cart"
     redirect_to root_path
   end
-
-
 end

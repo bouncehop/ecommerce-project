@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :pages, except: [:show]
-  get '/pages/:permalink' => "pages#permalink", as: "permalink"
+  get '/pages/:permalink' => 'pages#permalink', as: 'permalink'
   resources :books, only: %i[index show] do
     collection do
       get :search

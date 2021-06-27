@@ -28,18 +28,19 @@ genres.each do |g|
     )
 
     downloaded_image = URI.open("https://source.unsplash.com/800x600/?#{book.title}")
-    book.image.attach(io: downloaded_image, filename: "m-#{book.title[0,6]}.jpg")
+    book.image.attach(io: downloaded_image, filename: "m-#{book.title[0, 6]}.jpg")
     sleep(0.5)
   end
 end
 
-Page.create(title: "About Us", content: "stuff here", permalink: "about_us")
+Page.create(title: 'About Us', content: 'stuff here', permalink: 'about_us')
 
-Page.create(title: "Contact Us", content: "contact here", permalink: "contact_us")
-
+Page.create(title: 'Contact Us', content: 'contact here', permalink: 'contact_us')
 
 puts "Created #{Category.count} categories"
 puts "Created #{Book.count} books"
 puts "Created #{Page.count} pages"
 
-#AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+# AdminUser.create!(email: 'admin@example.com',
+#                     password: 'password',
+#                     password_confirmation: 'password') if Rails.env.development?

@@ -13,5 +13,4 @@ class ApplicationController < ActionController::Base
   def cart
     Book.find(session[:shopping_cart])
   end
-
 end

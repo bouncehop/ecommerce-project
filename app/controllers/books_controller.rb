@@ -11,9 +11,10 @@ class BooksController < ApplicationController
 
   def search
     if params[:categ].present?
-      @books = Book.where("title LIKE ?", "%#{params[:search_term]}%").where("category_id LIKE ?", "#{params[:categ]}").page(params[:page])
+      @books = Book.where('title LIKE ?', "%#{params[:search_term]}%").where('category_id LIKE ?',
+                                                                             params[:categ].to_s).page(params[:page])
     else
-      @books = Book.where("title LIKE ?", "%#{params[:search_term]}%").page(params[:page])
+      @books = Book.where('title LIKE ?', "%#{params[:search_term]}%").page(params[:page])
     end
   end
 end
